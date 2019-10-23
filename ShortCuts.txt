@@ -1,0 +1,7 @@
+﻿16.09.2019
+cmd - Mergem la bara unde este o anumita mapă, și când inroducem această comandă și apăsăm Enter se deschide command line.
+node -v - comanda care introdusă în command promt afișează versiunea Node.js. (npm)
+Alt + f4 - închide aplicația în care te afli.
+Window key + m - minimizează toate ferestrele deschise (le pune jos pe bară).
+npx create-react-app my-app; cd my-app; npm start - prin aceste comenzi se crează o React App.
+Ctrl + shift + j = deschide consola in browser.
