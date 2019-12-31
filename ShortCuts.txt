@@ -35,3 +35,5 @@ Ctrl + shift + j = deschide consola in browser.
 26. windows + s - will sleep the computer.
 27. windows + tab - arata cate descktopuri ai deschise si cate ferestre.
 28. ctrl + tab - schimba taburile din visual studio
+29. npx create-react-app the-name - se creaza un nou proiect react
+30. npm install react-router-dom - se instaleaza react router
