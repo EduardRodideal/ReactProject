@@ -1,0 +1,64 @@
+.modall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modall-main {
+  position: fixed;
+  background: white;
+  width: 43%;
+  height: auto;
+  top: 40%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+
+.modal-main-calendar {
+  position: fixed;
+  background:  rgba(2, 255, 255,1);
+  top: 0;
+  left: 0;
+  width: 43%;
+  height: auto;
+  top: 50%;
+  left: 9%;
+  transform: translate(5, 10);
+}
+
+.modal-main-hours{
+  position: fixed;
+  background:  rgba(2, 255, 255,1);
+  top: 0;
+  left: 0;
+  width: 43%;
+  height: auto;
+  top: 50%;
+  left: 9%;
+  transform: translate(5, 10);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.bigindex {
+  z-index: -1;
+}
+.smallindex {
+  z-index: 1;
+}
+.font {
+  font-size: 2rem;
+}
+.color {
+  color: blue;
+}
