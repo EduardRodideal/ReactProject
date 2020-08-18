@@ -3,11 +3,21 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { App } from "./App";
 import * as serviceWorker from "./serviceWorker";
+import { SearchContextProvider } from "./components/context/searchContext";
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <SearchContextProvider>
+//       <App />
+//     </SearchContextProvider>
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
 
 ReactDOM.render(
-  <React.StrictMode>
+  <SearchContextProvider>
     <App />
-  </React.StrictMode>,
+  </SearchContextProvider>,
   document.getElementById("root")
 );
 
