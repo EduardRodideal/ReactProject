@@ -27,7 +27,6 @@ export const App = () => {
     showBooksWithReviews,
     showCircle,
     showBooksShelves,
-    setShowBooksShelves,
   } = useContext(SearchContext);
   useEffect(() => {
     setData(dataBegin);

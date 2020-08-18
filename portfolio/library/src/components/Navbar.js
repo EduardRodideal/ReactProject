@@ -17,10 +17,8 @@ export const Navbar = () => {
     setShowShelves,
     setShowBooks,
     setShowShelf,
-    stateBook1,
     setShowHome,
     setShowBooksWithReviews,
-    showBooksShelves,
     setShowBooksShelves,
   } = useContext(SearchContext);
 
