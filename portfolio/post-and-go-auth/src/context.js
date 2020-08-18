@@ -1,5 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 import { firebase } from "./firebase";
+import jwtDecode from "jwt-decode";
 
 export const TimeContext = createContext();
 
@@ -38,8 +39,6 @@ export const TimeContextProvider = ({ children }) => {
   //used for controlling appearance of FormTaskModal
   const [isModal, setIsModal] = useState(false);
 
-
-
   //holds the value of calendar in TaskForm
   const selectedDate =
     date.getFullYear() +
@@ -52,7 +51,7 @@ export const TimeContextProvider = ({ children }) => {
 
   //set tasks in FormTask
   const handleSubmit = (event) => {
-    event.preventDefault();    
+    event.preventDefault();
     if (title.length !== 0) {
       setCommit(!commit);
       setIsModal(false);
@@ -63,6 +62,9 @@ export const TimeContextProvider = ({ children }) => {
   useEffect(() => {
     //prevent commiting when components mounts
     if (title.length !== 0) {
+      const token = localStorage.FBIdToken;
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken.user_id;
       const timeForId = new Date();
       const db = firebase.firestore();
       db.collection("items")
@@ -89,6 +91,7 @@ export const TimeContextProvider = ({ children }) => {
           invitation: invitation,
           location: location,
           description: description,
+          userId: userId,
         })
         .then(() => {
           setTitle("");
@@ -101,19 +104,24 @@ export const TimeContextProvider = ({ children }) => {
     }
   }, [commit]);
 
-  //custom hook for firestore lisener and for 
+  //custom hook for firestore lisener and for
   //retriving information when date is changed
   const useItems = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
+      const token = localStorage.FBIdToken;
+      const decodedToken = jwtDecode(token);
+      const userId = decodedToken.user_id;
       const itemDay =
         "" + date.getDate() + date.getMonth() + date.getFullYear();
+
 
       const unsubscribe = firebase
         .firestore()
         .collection("items")
         .where("date", "==", itemDay)
+        .where("userId", "==", userId)
         .orderBy("idTask")
         .onSnapshot((snapshot) => {
           const newItems = snapshot.docs.map((doc) => ({
@@ -129,12 +137,17 @@ export const TimeContextProvider = ({ children }) => {
 
   //read tasks from firebase per month
   useEffect(() => {
+    const token = localStorage.FBIdToken;
+    const decodedToken = jwtDecode(token);
+    const userId = decodedToken.user_id;
+
     const itemMonthYear = "" + date.getMonth() + date.getFullYear();
     let firebaseArray = [];
     let daysHaveTask = [];
     const db = firebase.firestore();
     db.collection("items")
       .where("monthYear", "==", itemMonthYear)
+      .where("userId", "==", userId)
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
@@ -205,9 +218,9 @@ export const TimeContextProvider = ({ children }) => {
         invitation,
         setInvitation,
         location,
-        setLocation,    
+        setLocation,
         isModal,
-        setIsModal,    
+        setIsModal,
       }}
     >
       {children}

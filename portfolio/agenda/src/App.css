@@ -1,0 +1,99 @@
+.calContainer {
+  border: '1px solid yellow';
+}
+
+.calDisplayM {
+  margin-left: 4px;
+}
+
+.calDisplayW {
+  display: inline;
+  margin-left: 2px;
+}
+.table {
+  width: 40;
+}
+.fsh {
+  font-size: 2rem;
+}
+.cor {
+  size: 10px;
+  color: blue;
+  background: red;
+}
+
+.tabel {
+  width: 190px;
+  border: 1px solid brown;
+  font-size: 0.5rem;
+  height: 5px;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+.tabel th {
+  color: blue;
+  border-bottom: 1px solid brown;
+}
+
+.tabel td {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  font-weight: 700;
+}
+
+.par {
+  transform: rotate(-90deg);
+  margin-top: 32px;
+  font-size: 2rem;
+}
+
+.calendarR {
+  font-size: 12px;
+  height: 72px;
+}
+
+.ml-12 {
+  margin-left: 52px;
+}
+
+.ml-12 {
+  margin-left: 12px;
+}
+
+.border {
+  border: 1px solid yellowgreen;
+  border-right: hidden;
+  border-left: hidden;
+}
+
+.borderB {
+  border-bottom: 1px solid lightblue;
+}
+
+.borderR {
+  width: 35px;
+  margin-left: 2rem;
+}
+
+.paperW {
+  width: 3rem;
+}
+
+.plus {
+  font-size: 2.5rem;
+  color: blue;
+}
+
+.angle {
+  font-size: 0.7rem;
+}
+
+.aria {
+  width: 100%;
+}
+.faTimes {
+  font-size: 1.5rem;
+  color: red;
+}

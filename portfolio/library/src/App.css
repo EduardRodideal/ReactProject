@@ -1,0 +1,39 @@
+.paper {
+  height: 88vh;
+}
+
+.text-aria {
+  margin-top: 0.2rem;
+  background-color: white;
+
+}
+.btn-search {
+  height: 2.48rem;
+  width: 0.5rem;
+}
+.grid-container {
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.fontic{
+  font-weight: bolder;
+  color: red;  
+}
+.mt{
+  top: 4rem;
+  color: red;
+}
+.ml{
+  padding-left: 2rem;
+  
+}
+.navbar{
+  margin-bottom: 2rem;
+}
+.col{
+  color: #f5da42;
+}
+.circular{
+  margin-left: 45%;  
+}

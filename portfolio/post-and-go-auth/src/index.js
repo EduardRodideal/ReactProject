@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { TimeContextProvider } from "./context";
+import { SessionContextProvider } from "./context2";
 
 ReactDOM.render(
   <React.StrictMode>
     <TimeContextProvider>
-      <App />
+      <SessionContextProvider>
+        <App />
+      </SessionContextProvider>
     </TimeContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
